@@ -2,4 +2,5 @@ version: '1.0'
 web:
   type: python
   version: 3
-  run: gunicorn -b :8989 --workers=2 my_web:app
+  run: gunicorn -b :$PORT --workers=2 my_web:app
+  #run: python3 my_twisted.py 
