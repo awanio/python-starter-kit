@@ -1,5 +1,6 @@
 from twisted.web import server, resource
 from twisted.internet import reactor, endpoints
+import os
 
 class Counter(resource.Resource):
     isLeaf = True
@@ -11,5 +12,5 @@ class Counter(resource.Resource):
         content = u"I am request #{}\n".format(self.numberRequests)
         return content.encode("ascii")
 
-endpoints.serverFromString(reactor, "tcp:8989").listen(server.Site(Counter()))
+endpoints.serverFromString(reactor, "tcp:"+os.getenv('PORT', 80)).listen(server.Site(Counter()))
 reactor.run()
