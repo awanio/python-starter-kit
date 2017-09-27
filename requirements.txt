@@ -1,1 +1,2 @@
 gunicorn>=19.7.1
+#Twisted>=17.9.0
