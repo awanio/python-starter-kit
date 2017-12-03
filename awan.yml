@@ -6,7 +6,7 @@ web:
   #run: python3 my_twisted.py
 script:
   preinstall:
-    - ping awan.io
+    - hostname
     - date
   postinstall:
     - python --version
